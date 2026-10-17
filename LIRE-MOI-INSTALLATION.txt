@@ -1,0 +1,27 @@
+TOUCH IN PARIS 2027 — INSTALLATION
+
+Domaine : https://touchinparis.touchroosters91.com/
+
+1. Décompressez le ZIP sur votre ordinateur.
+2. Dans votre espace hébergeur ou votre client FTP/SFTP, ouvrez le dossier
+   racine associé au sous-domaine touchinparis.touchroosters91.com.
+3. Sauvegardez les éventuels fichiers déjà présents que vous souhaitez conserver.
+4. Transférez le CONTENU du ZIP dans ce dossier : index.html doit être directement
+   à la racine, aux côtés de assets/, fr/, en/, style.css et app.js.
+   Ne créez pas de dossier intermédiaire portant le nom du ZIP.
+5. Vérifiez que le sous-domaine pointe sur ce dossier et dispose d'un certificat HTTPS.
+6. Ouvrez le domaine, puis /fr/ et /en/. Testez le changement de langue,
+   les images, le menu mobile et les fichiers calendrier.
+
+Le site est statique : aucun serveur Node.js, base de données ou installation
+de dépendances n'est nécessaire. L'hébergement doit servir index.html comme
+page d'accueil des dossiers et les fichiers .webp, .woff2 et .ics.
+
+Les URL canoniques, les liens de partage, les données structurées, le sitemap,
+robots.txt et les fichiers calendrier utilisent le domaine ci-dessus.
+Les images et les polices sont incluses. Les liens vers HelloAsso, Google Maps,
+la ville, le club et Touch France restent des liens externes.
+
+Cette archive ne publie rien automatiquement sur votre hébergement.
+Programme, équipes, résultats, photos officielles et partenaires restent à
+compléter. Les inscriptions d'équipes et résultats live ne sont pas connectés.

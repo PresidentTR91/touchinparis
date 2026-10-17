@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Touch Roosters 91//TIP2027//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:tip-2027-20@touchinparis
+DTSTAMP:20261017T120000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:Touch In Paris 2027 — 20e édition
+DESCRIPTION:Tournoi mixte de touch rugby. Horaires à confirmer. Stade Pel
+ chat\, Gif-sur-Yvette.
+LOCATION:Stade Pelchat\, Gif-sur-Yvette\, France
+URL:https://touchinparis.touchroosters91.com/fr/
+END:VEVENT
+END:VCALENDAR
