@@ -1,0 +1,65 @@
+TOUCH IN PARIS 2027 — SITE ET SUIVI DE COMPÉTITION
+
+INSTALLATION OVH
+1. Sauvegarder le site actuellement installé.
+2. Vérifier que l'hébergement du sous-domaine utilise PHP 8.2 ou supérieur
+   (testé avec PHP 8.4), avec les extensions cURL, ZipArchive et SimpleXML.
+3. Transférer tout le CONTENU du ZIP dans la racine du sous-domaine
+   touchinparis.touchroosters91.com, en remplaçant les fichiers correspondants.
+   index.html, assets/, fr/, en/ et competition/ doivent être au même niveau.
+   Inclure les fichiers cachés .htaccess, notamment competition/_private/.htaccess.
+4. Le dossier competition/_private/ doit être accessible en écriture par PHP
+   pour le cache et la limitation des tentatives. Ne pas utiliser les droits 777.
+5. Utiliser HTTPS. Ouvrir /fr/, puis le lien Compétition et se connecter :
+   identifiant : Admin
+   mot de passe : Admin
+   Les majuscules comptent. Il s'agit de l'accès temporaire partagé demandé.
+6. Vérifier que /competition/data.php refuse l'accès hors connexion et que
+   /competition/_private/config.php répond 403 ou 404. Vérifier ensuite la
+   mention Synchronisé sur le tableau de bord. Si la copie initiale reste
+   affichée, vérifier les extensions PHP, l'accès HTTPS sortant vers Google
+   et les droits d'écriture du dossier privé.
+
+Aucune base de données, installation Composer ou application Node nécessaire.
+Cette archive ne publie rien automatiquement sur OVH. Elle conserve la boutique
+collector et ajoute les liens vers la compétition aux pages publiques FR/EN.
+Ne pas utiliser l'ancien projet Laravel espace-clubs abandonné.
+La nouvelle page compétition est en français.
+
+FONCTIONNEMENT
+Source : https://docs.google.com/spreadsheets/d/1pCVU9TWnZ0IkT4BOakUxdvxYqwPZvBEptkQlRp4wPRY/edit
+Les scores sont saisis dans le Google Sheet. Le site consulte son export XLSX
+et reprend les valeurs calculées par Google, sans modifier le classeur.
+Actualisation toutes les 60 secondes lorsque la page est visible, cache serveur
+partagé. En cas d'indisponibilité, la dernière copie est affichée avec une alerte
+et son horodatage. Une copie initiale est incluse pour le premier démarrage.
+Les 10 onglets sont accessibles, avec des vues dédiées pour les poules, matchs,
+classements, Cup/Plate/Bowl, règlement et arbitres. La vue Tous les onglets
+reprend les valeurs des cellules, pas l'éditeur de formules ni la mise en page
+complète de Google Sheets.
+Ne pas renommer les onglets ou déplacer les colonnes sans adapter le lecteur.
+Le format actuel est prévu pour les 24 équipes et les 72 rencontres du classeur.
+
+Aucun Apps Script n'est nécessaire pour cette lecture du fichier public.
+Le mot de passe protège la page du site, pas le Google Sheet dont le partage
+reste ouvert. Pour rendre le Sheet privé ou saisir les scores depuis le site,
+prévoir une intégration authentifiée distincte (API Google ou Apps Script).
+
+ARBITRES ET PLANNING
+36 noms d'acteurs fictifs, 3 arbitres distincts par rencontre et 6 rencontres
+par arbitre dans le format actuel. Chaque nom ouvre ses matchs. Ces affectations
+sont une démonstration, pas un planning opérationnel validé. Elles dépendent
+de l'ordre des rencontres. Les noms sont dans competition/_private/referees.php.
+Les horaires et terrains ne sont pas présents dans le classeur et ne sont pas
+inventés. Avant utilisation réelle : préciser terrains, créneaux, durée des
+matchs, rattachement des arbitres-joueurs aux équipes et contraintes de repos.
+Valider aussi les départages exceptionnels mentionnés dans le règlement et
+l'écart signalé dans le classeur entre les formats Cup/Plate/Bowl et Shield.
+
+MAINTENANCE
+Le hash du mot de passe est dans competition/_private/config.php. Pour changer
+le mot de passe, générer un hash avec password_hash PHP et remplacer uniquement
+password_hash. Aucun mot de passe n'est stocké dans le JavaScript.
+Ne pas publier de fichiers de sauvegarde .bak, .txt ou ZIP du dossier privé.
+Le présent guide est à conserver localement ; son transfert au serveur est
+facultatif. Les sessions expirent après deux heures sans activité.

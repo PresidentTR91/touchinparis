@@ -20,8 +20,8 @@ function parseWorkbook(string $filename): array {
         $relations=[];
         foreach($xml('xl/_rels/workbook.xml.rels')->Relationship as $r) {
             $target=(string)$r['Target'];
-            if(str_contains($target,'..')||str_contains($target,':')) continue;
-            $relations[(string)$r['Id']]=str_starts_with($target,'/')?ltrim($target,'/'):'xl/'.$target;
+            if(strpos($target,'..')!==false||strpos($target,':')!==false) continue;
+            $relations[(string)$r['Id']]=substr($target,0,1)==='/'?ltrim($target,'/'):'xl/'.$target;
         }
         $sheets=[]; $errors=[];
         foreach($xml('xl/workbook.xml')->sheets->sheet as $sheet) {

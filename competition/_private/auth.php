@@ -22,7 +22,7 @@ if (!empty($_SESSION['authenticated'])) $_SESSION['last_seen']=time();
 function csrfValid(): bool { return isset($_POST['csrf']) && is_string($_POST['csrf']) && hash_equals($_SESSION['csrf'], $_POST['csrf']); }
 function authenticated(): bool { return !empty($_SESSION['authenticated']); }
 function requireAccess(): void { if(!authenticated()) { http_response_code(401); header('Content-Type: application/json; charset=utf-8'); echo json_encode(['error'=>'Session expirée. Reconnectez-vous.']); exit; } }
-function esc(mixed $value): string { return htmlspecialchars((string)$value,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8'); }
+function esc($value): string { return htmlspecialchars((string)$value,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8'); }
 function tryLogin(string $username,string $password,array $config): string {
     $file=__DIR__.'/attempts.php'; $handle=fopen($file,'c+');
     if(!$handle || !flock($handle,LOCK_EX)) return 'Connexion temporairement indisponible.';
