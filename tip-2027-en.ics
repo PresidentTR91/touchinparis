@@ -4,13 +4,15 @@ PRODID:-//Touch Roosters 91//TIP2027//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:tip-2027-20@touchinparis
-DTSTAMP:20261017T120000Z
-DTSTART;VALUE=DATE:20270515
-DTEND;VALUE=DATE:20270516
+DTSTAMP:20261018T160000Z
+SEQUENCE:1
+DTSTART:20270515T053000Z
 SUMMARY:Touch In Paris 2027 — 20th edition
-DESCRIPTION:Mixed touch rugby tournament. Timings to be confirmed. Stade P
- elchat\, Gif-sur-Yvette.
-LOCATION:Stade Pelchat\, Gif-sur-Yvette\, France
+DESCRIPTION:Paris time\n07:30 — Team welcome · 08:00 — Warm-up with B
+ leuenn and Elsa · 08:30 — First match starts · 18:00 — Final · Aft
+ er the matches — BBQ and evening celebration. On-site meal and evening 
+ celebration included in the package.
+LOCATION:Parc des sports Michel Pelchat\, 91190 Gif-sur-Yvette\, France
 URL:https://touchinparis.touchroosters91.com/en/
 END:VEVENT
 END:VCALENDAR

@@ -26,7 +26,12 @@ collector et ajoute les liens vers la compétition aux pages publiques FR/EN.
 Ne pas utiliser l'ancien projet Laravel espace-clubs abandonné.
 Le site et la page compétition sont disponibles en français, anglais, italien,
 espagnol et allemand. Le logo fourni est inclus. Transférer aussi it/, es/, de/,
-les nouveaux fichiers JavaScript et assets/touch-in-paris-logo.jpg.
+les nouveaux fichiers JavaScript et les nouveaux fichiers du dossier assets/.
+Cette édition inclut le sponsor L’Île O’ Crêpes, le lien Instagram @touch.in.paris,
+le contact info.touchinparis@gmail.com, le logo rose et or et la bannière fournie.
+Dans le guide participants : liens officiels Android (Google Play) et iPhone
+(App Store) pour Bonjour RATP et Île-de-France Mobilités. L’installation est
+effectuée par le visiteur dans sa boutique, jamais automatiquement par le site.
 Les corrections de connexion pour PHP 7.4 sont conservées. Les vérifications
 locales sont effectuées sous PHP 8.4 ; PHP 8.2 ou supérieur reste recommandé.
 Le choix de langue est enregistré dans le navigateur. Les noms des équipes et
