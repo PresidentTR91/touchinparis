@@ -27,8 +27,13 @@ function tryLogin(string $username,string $password,array $config): string {
     $file=__DIR__.'/attempts.php'; $handle=fopen($file,'c+');
     if(!$handle || !flock($handle,LOCK_EX)) return 'Connexion temporairement indisponible.';
     $raw=stream_get_contents($handle); $prefix="<?php exit; ?>\n";
-    $data=json_decode(substr($raw,strlen($prefix)),true) ?: [];
-    $now=time(); $data=array_filter($data,fn($entry)=>($entry['until']??0)>$now);
+    // PHP 7.4 returns false when substr starts beyond an empty file.
+    // With strict_types, passing that false to json_decode aborts first login.
+    $payload=is_string($raw) && strlen($raw)>=strlen($prefix)
+        ? substr($raw,strlen($prefix)) : '';
+    $decoded=$payload!=='' ? json_decode($payload,true) : [];
+    $data=is_array($decoded)?$decoded:[];
+    $now=time(); $data=array_filter($data,fn($entry)=>is_array($entry) && ($entry['until']??0)>$now);
     $key=hash('sha256',($_SERVER['REMOTE_ADDR']??'local'));
     $entry=$data[$key]??['count'=>0,'until'=>$now+300];
     if($entry['count']>=8) $error='Trop de tentatives. Réessayez dans cinq minutes.';
