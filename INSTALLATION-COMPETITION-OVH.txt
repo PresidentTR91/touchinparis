@@ -24,7 +24,15 @@ Aucune base de données, installation Composer ou application Node nécessaire.
 Cette archive ne publie rien automatiquement sur OVH. Elle conserve la boutique
 collector et ajoute les liens vers la compétition aux pages publiques FR/EN.
 Ne pas utiliser l'ancien projet Laravel espace-clubs abandonné.
-La nouvelle page compétition est en français.
+Le site et la page compétition sont disponibles en français, anglais, italien,
+espagnol et allemand. Le logo fourni est inclus. Transférer aussi it/, es/, de/,
+les nouveaux fichiers JavaScript et assets/touch-in-paris-logo.jpg.
+Les corrections de connexion pour PHP 7.4 sont conservées. Les vérifications
+locales sont effectuées sous PHP 8.4 ; PHP 8.2 ou supérieur reste recommandé.
+Le choix de langue est enregistré dans le navigateur. Les noms des équipes et
+des arbitres restent inchangés. Les traductions du règlement correspondent au
+texte actuel : si ce texte change dans le Sheet, sa traduction doit être mise
+à jour ; un nouveau texte inconnu sera affiché dans sa langue d'origine.
 
 FONCTIONNEMENT
 Source : https://docs.google.com/spreadsheets/d/1pCVU9TWnZ0IkT4BOakUxdvxYqwPZvBEptkQlRp4wPRY/edit

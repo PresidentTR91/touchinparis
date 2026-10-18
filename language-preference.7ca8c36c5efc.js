@@ -1,0 +1,1 @@
+try{localStorage.setItem('tip-language',document.documentElement.lang)}catch{};
